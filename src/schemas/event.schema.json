@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "locaily.event.v1",
+  "title": "LocAIly Session Event",
+  "description": "A single meaningful event recorded during a session.",
+  "type": "object",
+  "required": ["type", "sessionId", "timestamp"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "context.loaded",
+        "file.read",
+        "file.changed",
+        "command.executed",
+        "validation.started",
+        "validation.completed",
+        "decision.made",
+        "blocker.encountered",
+        "objective.changed",
+        "session.completed"
+      ],
+      "description": "Classification of the event."
+    },
+    "sessionId": {
+      "type": "string",
+      "description": "The session this event belongs to."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the event."
+    },
+    "command": {
+      "type": "string",
+      "description": "The shell command that was executed (for command/validation events)."
+    },
+    "result": {
+      "type": "string",
+      "description": "Outcome of a validation or command (e.g., passed, failed)."
+    },
+    "exitCode": {
+      "type": ["integer", "null"],
+      "description": "Process exit code (0 = success)."
+    },
+    "filePath": {
+      "type": "string",
+      "description": "Path to the file involved (for file events)."
+    },
+    "decision": {
+      "type": "string",
+      "description": "Description of a design decision (for decision.made)."
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for a decision or blocker."
+    },
+    "impact": {
+      "type": "string",
+      "description": "Impact description (for blocker events)."
+    },
+    "branch": {
+      "type": "string",
+      "description": "Git branch name (for branch change events)."
+    },
+    "details": {
+      "type": "object",
+      "description": "Additional event-specific data."
+    }
+  },
+  "additionalProperties": false
+}

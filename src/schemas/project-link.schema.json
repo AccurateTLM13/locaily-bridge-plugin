@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "locaily.project-link.v1",
+  "title": "LocAIly Project Link",
+  "description": "Links an OpenCode repository to a LocAIly Local Brain project.",
+  "type": "object",
+  "required": ["schemaVersion", "projectId", "localBrain", "repository"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "locaily.project-link.v1",
+      "description": "Identifies the schema version for this registry file."
+    },
+    "projectId": {
+      "type": "string",
+      "description": "The unique identifier of the project in the Local Brain.",
+      "examples": ["doughboy-vinyl-technologies"]
+    },
+    "localBrain": {
+      "type": "string",
+      "description": "Absolute path to the Local Brain root directory.",
+      "examples": ["D:/LocAIly/local-brain"]
+    },
+    "repository": {
+      "type": "string",
+      "description": "Absolute path to the repository root that this link applies to.",
+      "examples": ["C:/Projects/doughboy-vinyl"]
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["manual", "assisted", "enforced"],
+      "default": "manual",
+      "description": "Operating mode for the plugin."
+    }
+  },
+  "additionalProperties": false
+}
