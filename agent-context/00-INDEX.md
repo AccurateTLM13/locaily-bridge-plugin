@@ -29,6 +29,22 @@ This folder contains the complete specification for building the LocAIly OpenCod
 - `schemas/event.schema.json` — Event record format  
 - `schemas/handoff.schema.json` — Handoff record format
 
+## Completion and verification documents
+
+The original documents describe the intended architecture. The following documents govern completion of the current implementation:
+
+| # | File | Purpose |
+|---|---|---|
+| 100 | `100-current-state-audit.md` | Verified gaps and defects in the current prototype |
+| 110 | `110-opencode-integration-contract.md` | Required boundary with the real OpenCode API |
+| 120 | `120-completion-plan.md` | Ordered recovery and completion stages |
+| 130 | `130-test-strategy.md` | Required test layers and scenarios |
+| 140 | `140-acceptance-criteria.md` | Definition of finished behavior |
+| 150 | `150-release-gate.md` | Evidence required before release |
+| 160 | `160-agent-work-directive.md` | Immediate development-agent instructions |
+
+For continuation work, read documents 100–160 before modifying code.
+
 ## Quick start
 
 For an MVP, read `99-mvp.md` first, then implement in build-phase order within that scope.

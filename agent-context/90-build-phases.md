@@ -1,5 +1,24 @@
 # Build phases
 
+> **Current implementation note:**
+>
+> Phases 1–6 have been broadly scaffolded, but they have not all been verified.
+> Do not continue implementing this file sequentially as though earlier phases
+> are complete. Use `120-completion-plan.md` for the current development order.
+
+## Phase status summary
+
+| Phase   | Current status                                    |
+| ------- | ------------------------------------------------- |
+| Phase 1 | **Implemented but integration-unverified**        |
+| Phase 2 | **Partial**                                       |
+| Phase 3 | **Partial; not connected to OpenCode hooks**      |
+| Phase 4 | **Implemented structurally; contract-unverified** |
+| Phase 5 | **Partial; mostly post-action auditing**          |
+| Phase 6 | **Modeled; concurrency-unverified**               |
+
+
+
 ## Phase 1 — Project link
 
 Build only:
